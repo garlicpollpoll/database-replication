@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul th:each="members : ${members}">
+    <li th:text="${members.name}"></li>
+    <li th:text="${members.age}"></li>
+    <li th:text="${members.balance}"></li>
+</ul>
+</body>
+</html>
