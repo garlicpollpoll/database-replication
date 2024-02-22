@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://13.125.37.153:3306/capston?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC&characterEncoding=UTF-8
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -14,9 +14,8 @@ spring:
         format_sql: true
   data:
     redis:
-      host: 13.125.37.153
+      host: localhost
       port: 6379
-      password: root
       cache:
         expiration-after-write-policy: 1h
     session:

@@ -28,7 +28,7 @@ public class MemberController {
 
         Cookie[] cookies = request.getCookies();
         Cookie cookie = cookies[0];
-        String name = cookie.getAttribute("name");
+        String name = cookie.getValue();
 
         if (name != null) {
             findMember = cacheRepository.findMemberAtCache(name);
@@ -70,6 +70,7 @@ public class MemberController {
         session.setAttribute("member", findMember.getName());
         response.addCookie(new Cookie("name", findMember.getName()));
         model.addAttribute("members", findMember);
+        cacheRepository.addMember(findMember);
 
         return "redirect:/members";
     }
