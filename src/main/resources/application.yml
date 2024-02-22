@@ -12,6 +12,17 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+  data:
+    redis:
+      host: 13.125.37.153
+      port: 6379
+      password: root
+      cache:
+        expiration-after-write-policy: 1h
+    session:
+      store-type: redis
+  main:
+    allow-bean-definition-overriding: true
 logging:
   level:
     org.hibernate.SQL: debug
